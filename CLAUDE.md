@@ -49,5 +49,13 @@ Nucleo-64(F446RE)에 맞게 핀/클럭 설정을 수정하여 적용한다.
 
 ## RAG 문서 검색
 
-`search_stm32_docs` MCP 도구가 전역 등록되어 있어 STM32 관련 질문 시 자동으로
-RM0390 / Datasheet / PM0214 / UM1724 문서를 검색하여 답변한다.
+STM32 공식 문서(RM0390, PM0214, Datasheet, UM1724) 964개 청크가 벡터 DB에 구축되어 있다.
+MCP 서버(`search_stm32_docs`)를 사용하려면 아래 명령으로 먼저 등록해야 한다.
+
+```bash
+claude mcp add stm32-docs \
+    /home/anton/projects/STM32_project/rag/venv/bin/python \
+    /home/anton/projects/STM32_project/rag/mcp_server.py
+```
+
+등록 후 Claude Code를 재시작하면 STM32 관련 질문 시 자동으로 문서를 검색하여 답변한다.

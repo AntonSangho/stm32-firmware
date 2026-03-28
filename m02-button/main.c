@@ -6,6 +6,7 @@
 #define BTN_PORT   GPIOC
 #define BTN_PIN    GPIO13
 
+
 static void gpio_setup(void)
 {
     /* TODO: GPIOA 클럭 활성화 */
