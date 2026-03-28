@@ -1,0 +1,5 @@
+-I../libopencm3/include
+-I../FreeRTOS/include
+-I../FreeRTOS/portable/GCC/ARM_CM4F
+-I.
+-DSTM32F4

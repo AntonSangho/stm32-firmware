@@ -1,4 +1,4 @@
-BINARY      = freertos_blink
+BINARY      = usart
 OPENCM3_DIR = ../libopencm3
 FREERTOS_DIR = ../FreeRTOS
 
@@ -28,6 +28,7 @@ LDFLAGS = -Tstm32f446re.ld \
           -L$(OPENCM3_DIR)/lib \
           -nostartfiles \
           --specs=nano.specs \
+          --specs=nosys.specs \
           -Wl,-Map=$(BINARY).map \
           -Wl,-L$(OPENCM3_DIR)/lib
 

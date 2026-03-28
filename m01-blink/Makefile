@@ -27,7 +27,7 @@ $(BINARY).bin: $(BINARY).elf
 	$(OBJCOPY) -O binary $< $@
 
 flash: $(BINARY).bin
-	st-flash write $(BINARY).bin 0x8000000
+	st-flash --reset write $(BINARY).bin 0x8000000
 
 clean:
 	rm -f $(BINARY).elf $(BINARY).bin
